@@ -19,13 +19,12 @@ export default async function Home({searchParams}: {searchParams: Promise<{ quer
   return <>
     <section className="pink_container">
       <h1 className="heading">
-        Pitch Your Startup, <br/>
-        Connect With Entrepreneurs
+        Publish your recipes <br/>
+        Сhoose from the best
       </h1>
 
       <p className="sub-heading !max-w-3xl">
-        Submit Ideas, Vote on Pitches, and Get Noticed in Virtual
-        Competitions.
+        Create delicious ideas and share them with the whole world
       </p>
 
       <SearchForm query={query}/>
@@ -33,7 +32,7 @@ export default async function Home({searchParams}: {searchParams: Promise<{ quer
 
     <section className="section_container">
       <p className="text-30-semibold">
-        {query ? `Search results for "${query}"` : "All Startups"}
+        {query ? `Search results for "${query}"` : "All Recipes"}
       </p>
 
       <ul className="mt-7 card_grid">
@@ -42,7 +41,7 @@ export default async function Home({searchParams}: {searchParams: Promise<{ quer
                 <StartupCard key={post?._id} post={post as StartupTypeCard} />
             ))
         ) : (
-            <p className="no-results">No startups found</p>
+            <p className="no-results">No recipes found</p>
         )}
       </ul>
     </section>
